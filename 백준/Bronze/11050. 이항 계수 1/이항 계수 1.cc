@@ -15,19 +15,12 @@ int main()
         return 0;
     }
     
-    for(int i = 1; i < N; i++){
-        N_factorial *= i;
-    }
-    
-    for(int i = 1; i < K; i++){
-        K_factorial *= i;
-    }
-    
-    for(int i = 1; i < (N-K); i++){
-        N_minus_K_factorial *= i;
-    }
+    for(int i = 1; i < N; i++) N_factorial *= i;
+    for(int i = 1; i < K; i++) K_factorial *= i;
+    for(int i = 1; i < (N-K); i++) N_minus_K_factorial *= i;
     
     binomial_coefficient = N_factorial / (N_minus_K_factorial * K_factorial);
-    
     cout << binomial_coefficient;
+    
+    return 0;
 }
