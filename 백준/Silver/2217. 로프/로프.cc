@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 
 int main() {
@@ -22,7 +21,7 @@ int main() {
         maxWeight = max(maxWeight, ropes[i] * (i + 1));
     }
 
-    cout << maxWeight << endl;
+    cout << maxWeight;
 
     return 0;
 }
