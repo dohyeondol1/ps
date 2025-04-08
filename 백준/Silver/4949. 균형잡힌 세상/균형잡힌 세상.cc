@@ -7,10 +7,10 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     
-    char str[104];
+    char str[101];
 
     while(true) {
-        cin.getline(str, 104);
+        cin.getline(str, 101);
         if(strcmp(str, ".") == 0) break;
 
         stack<char> stack;
