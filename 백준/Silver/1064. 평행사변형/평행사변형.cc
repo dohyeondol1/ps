@@ -12,7 +12,7 @@ int main() {
     cin >> x_A >> y_A >> x_B >> y_B >> x_C >> y_C;
 
     double cross = (x_B - x_A) * (y_C - y_B) - (y_B - y_A) * (x_C - x_B);
-    if(fabs(cross) < 1e-9) {
+    if(cross == 0) {
         cout << "-1.0";
         return 0;
     }
