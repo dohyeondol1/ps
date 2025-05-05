@@ -26,20 +26,15 @@ void binary_search(int x) {
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
+    cin.tie(nullptr)->sync_with_stdio(false);
 
     cin >> N;
-
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
         cin >> N_array[i];
-    }
 
     sort(N_array, N_array + N);
     
-    cin >> M;
-
-    int x;
+    cin >> M; int x;
     for (int i = 0; i < M; i++) {
         cin >> x;
         binary_search(x);
