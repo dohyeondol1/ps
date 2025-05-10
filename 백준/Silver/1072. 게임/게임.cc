@@ -11,13 +11,12 @@ int main() {
         return 0;
     }
     
-    long long currentRate = 100*Y/X;
     long long left = 0, right = 1000000000;
     while(left <= right) {
         long long mid = (left+right)/2;
         long long newWinRate = 100*(Y+mid)/(X+mid);
         
-        if(newWinRate > currentRate) {
+        if(newWinRate > Z) {
             minCount = mid;
             right = mid-1;
         }
