@@ -22,7 +22,5 @@ int solution(vector<int> scoville, int K) {
         pq.push(newOne);
     }
     
-    
-    
     return answer;
 }
