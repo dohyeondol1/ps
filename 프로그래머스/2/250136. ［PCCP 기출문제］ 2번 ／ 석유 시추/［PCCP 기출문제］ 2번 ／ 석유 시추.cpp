@@ -9,20 +9,20 @@ int dy[4] = {0, 0, 1, -1};
 int N, M;
 int map[501][501];
 int visited[501][501];
-int colCheck[501];
+int xCheck[501];
 int answer[501];
 int area = 0;
 
 void dfs(int x, int y) {
-    for(int dir = 0; dir < 4; dir++) {
-        int nx = x + dx[dir];
-        int ny = y + dy[dir];
+    for(int i = 0; i < 4; i++) {
+        int nx = x + dx[i];
+        int ny = y + dy[i];
 
         if(nx < 1 || ny < 1 || nx > N || ny > M) continue;
         if(visited[nx][ny] || map[nx][ny] == 0) continue;
 
         visited[nx][ny] = 1;
-        if(!colCheck[ny]) colCheck[ny] = 1;
+        if(!xCheck[ny]) xCheck[ny] = 1;
         area++;
 
         dfs(nx, ny);
@@ -37,20 +37,20 @@ int solution(vector<vector<int>> land) {
         for(int j = 1; j <= M; j++)
             map[i][j] = land[i - 1][j - 1];
 
-    for(int col = 1; col <= M; col++) {
-        for(int row = 1; row <= N; row++) {
-            if(map[row][col] == 0 || visited[row][col]) continue;
+    for(int x = 1; x <= M; x++) {
+        for(int y = 1; y <= N; y++) {
+            if(map[y][x] == 0 || visited[y][x]) continue;
 
-            visited[row][col] = 1;
-            colCheck[col] = 1;
+            visited[y][x] = 1;
+            xCheck[x] = 1;
             area = 1;
 
-            dfs(row, col);
+            dfs(y, x);
 
             for(int i = 1; i <= M; i++) {
-                if(colCheck[i]) {
+                if(xCheck[i]) {
                     answer[i] += area;
-                    colCheck[i] = 0;
+                    xCheck[i] = 0;
                 }
             }
 
