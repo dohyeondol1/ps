@@ -13,19 +13,19 @@ int xCheck[501];
 int answer[501];
 int area = 0;
 
-void dfs(int x, int y) {
+void dfs(int y, int x) {
     for(int i = 0; i < 4; i++) {
-        int nx = x + dx[i];
         int ny = y + dy[i];
+        int nx = x + dx[i];
 
-        if(nx < 1 || ny < 1 || nx > N || ny > M) continue;
-        if(visited[nx][ny] || map[nx][ny] == 0) continue;
+        if(ny < 1 || nx < 1 || ny > N || nx > M) continue;
+        if(visited[ny][nx] || map[ny][nx] == 0) continue;
 
-        visited[nx][ny] = 1;
-        if(!xCheck[ny]) xCheck[ny] = 1;
+        visited[ny][nx] = 1;
+        if(!xCheck[nx]) xCheck[nx] = 1;
         area++;
 
-        dfs(nx, ny);
+        dfs(ny, nx);
     }
 }
 
@@ -35,7 +35,7 @@ int solution(vector<vector<int>> land) {
 
     for(int i = 1; i <= N; i++)
         for(int j = 1; j <= M; j++)
-            map[i][j] = land[i - 1][j - 1];
+            map[i][j] = land[i-1][j-1];
 
     for(int x = 1; x <= M; x++) {
         for(int y = 1; y <= N; y++) {
