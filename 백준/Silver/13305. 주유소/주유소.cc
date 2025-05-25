@@ -4,19 +4,20 @@ using namespace std;
 
 int main() {
     cin.tie(nullptr)->sync_with_stdio(false);
+    long long answer = 0;
     
-    int cityCount, answer = 0;
+    int cityCount;
     cin >> cityCount;
     
-    vector<int> distance(cityCount);
+    vector<long long> distance(cityCount);
     for(int i = 0; i < cityCount-1; i++)
         cin >> distance[i];
     
-    vector<int> cost(cityCount);
+    vector<long long> cost(cityCount);
     for(int i = 0; i < cityCount; i++)
         cin >> cost[i];
         
-    int minCost = 0;
+    long long minCost = 0;
     for(int i = 0; i < cityCount-1; i++) {
         if(i == 0) minCost = cost[i];
         else minCost = min(cost[i], minCost);
