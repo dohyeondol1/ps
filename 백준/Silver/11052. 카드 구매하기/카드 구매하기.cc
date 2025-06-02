@@ -15,7 +15,6 @@ int main() {
     }
     
     for(int i = 1; i <= N; i++) {
-        int count = 0;
         for(int j = 1; j <= i; j++) {
             int temp = i/j;
             if(j*temp != i) dp[i] = max(dp[i-j*temp]+dp[j]*temp, dp[i]);
