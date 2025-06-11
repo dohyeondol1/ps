@@ -1,6 +1,5 @@
 #include <iostream>
 #include <queue>
-#include <memory.h>
 using namespace std;
 
 int N, M;
@@ -36,7 +35,7 @@ void bfs(int startX, int startY) {
 }
 
 int main() {
-    cin.tie(NULL)->sync_with_stdio(false);
+    cin.tie(nullptr)->sync_with_stdio(false);
 
     cin >> N >> M;
 
@@ -54,12 +53,8 @@ int main() {
 
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < M; j++) {
-            if(num[i][j] == 0) {
-                cout << 0 << ' ';
-            }
-            else {
-                cout << visited[i][j] - 1 << ' ';
-            }
+            if(num[i][j] == 0) cout << 0 << ' ';
+            else cout << visited[i][j] - 1 << ' ';
         }
         cout << '\n';
     }
