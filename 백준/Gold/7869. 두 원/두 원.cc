@@ -27,8 +27,7 @@ int main() {
         S = area1 + area2;
     }
 
-    cout << fixed;
     cout.precision(3);
-    cout << S << '\n';
+    cout << fixed << S << '\n';
     return 0;
 }
