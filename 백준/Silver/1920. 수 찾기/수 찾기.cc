@@ -8,18 +8,17 @@ int main() {
     
     int N, M;
     cin >> N;
+    vector<int> array(N);
+    for(int i = 0; i < N; ++i)
+        cin >> array[i];
     
-    vector<int> N_array(N);
-    for(int i = 0; i < N; i++)
-        cin >> N_array[i];
-
-    sort(N_array.begin(), N_array.end());
+    sort(array.begin(), array.end());
     
     cin >> M; int x;
-    for(int i = 0; i < M; i++) {
+    for(int i = 0; i < M; ++i) {
         cin >> x;
-        cout << binary_search(N_array.begin(), N_array.end(), x) << '\n';
+        cout << binary_search(array.begin(), array.end(), x) << '\n';
     }
-
+    
     return 0;
 }
